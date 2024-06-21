@@ -17,6 +17,7 @@ class EventService(private val eventRepository: EventRepository) {
 
     // todo: find by type isn't working currently
     fun getEventsByType(type: String): List<Event> {
-        return eventRepository.findAll()
+        return eventRepository.findByType(type)
+
     }
 }
