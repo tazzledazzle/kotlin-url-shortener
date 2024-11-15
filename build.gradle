@@ -30,8 +30,11 @@ dependencies {
     testImplementation("io.mockk:mockk:1.12.0")
 }
 
-test {
+tasks.named('test', Test) {
     useJUnitPlatform()
+    testLogging {
+        events "passed", "failed", "skipped"
+    }
 }
 kotlin {
     jvmToolchain(17)
